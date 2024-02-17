@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "Генератор паролей"
+  },
+  "extensionDescription": {
+    "message": "Генератор паролей и проверка его прочности."
+  }
+}

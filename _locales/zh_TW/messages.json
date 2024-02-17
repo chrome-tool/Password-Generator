@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "密碼生成器"
+  },
+  "extensionDescription": {
+    "message": "密碼生成器並檢查密碼的强度."
+  }
+}
