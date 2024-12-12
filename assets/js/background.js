@@ -3,6 +3,6 @@ chrome.sidePanel
   .catch((error) => console.error(error));
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
-    chrome.runtime.setUninstallURL("https://chromewebstore.google.com");
+    chrome.runtime.setUninstallURL("https://chromewebstore.google.com/detail/password-generator/pipdfldiejhcfhahjejidaamalcedppm?authuser=0&hl=en");
   }
 });
