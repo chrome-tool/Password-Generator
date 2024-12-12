@@ -1,169 +1,122 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  font-family: 'Inter', sans-serif;
+  background-color: #111827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  height: 100vh;
+  color: white;
 }
-
 .container {
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 100vh;
+  background-color: #1f2937;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 28rem;
 }
-
-.title {
+h1 {
   text-align: center;
-  color: #333333;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.password-generator label {
-  display: block;
+  font-size: 1.875rem;
   font-weight: bold;
-  margin-bottom: 8px;
-  font-size: 16px;
+  margin-bottom: 1.5rem;
 }
-
-.password-generator input[type="number"],
-.password-generator input[type="text"] {
-  padding: 10px;
-  width: calc(100% - 120px);
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  margin-bottom: 15px;
+.password-container {
+  position: relative;
+  margin-bottom: 1.5rem;
 }
-
-.password-generator button {
-  padding: 12px 24px;
-  background-color: #4caf50;
-  color: #ffffff;
+#password {
+  width: 100%;
+  padding: 0.75rem;
+  padding-right: 3rem;
+  font-size: 1.125rem;
+  background-color: #374151;
+  color: white;
+  border: 1px solid #4b5563;
+  border-radius: 0.375rem;
+  box-sizing: border-box;
+}
+#copyButton {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.password-generator button:hover {
-  background-color: #45a049;
-}
-
-.password-display {
-  background-color: #f0f0f0;
-}
-
-.password-manager button {
-  padding: 12px 24px;
-  background-color: #008cba;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
+  color: #9ca3af;
   cursor: pointer;
 }
-
-.password-manager button:hover {
-  background-color: #007a9b;
+#copyButton:hover {
+  color: #d1d5db;
 }
-
-.checkbox {
-  margin-bottom: 10px;
+.copied-message {
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+  color: #34d399;
+  font-size: 0.875rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
-
-.checkbox input {
-  display: none;
+.slider-container {
+  margin-bottom: 1.5rem;
 }
-
-.checkbox label {
+.slider-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+#length {
+  width: 100%;
+}
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.option {
   display: flex;
   align-items: center;
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-  font-size: 16px;
-  color: #333;
-  height: 25px;
 }
-
-.checkbox label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #555;
-  background-color: #fff;
-  border-radius: 4px;
+.option input {
+  margin-right: 0.5rem;
 }
-
-.checkbox input:checked + label:before {
-  background-color: #2196f3;
-  border-color: #2196f3;
-}
-
-.checkbox label:after {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 2px;
-  width: 8px;
-  height: 14px;
-  border: solid #fff;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
-  display: none;
-}
-
-.checkbox input:checked + label:after {
-  display: block;
-}
-
-.password-strength p{
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
+#generateButton {
   width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-  border-radius: 10px;
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
-}
-
-.modal-content p {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#generateButton:hover {
+  background-color: #1d4ed8;
+}
+#generateButton svg {
+  margin-right: 0.5rem;
+}
+.strength-meter {
+  height: 0.5rem;
+  background-color: #4b5563;
+  margin-top: 1rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.strength-meter-fill {
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+.strength-text {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
 }
